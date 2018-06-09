@@ -1,0 +1,6 @@
+-cp src
+-cp sample
+
+ Main.hx
+
+ -python bin/sample.py
