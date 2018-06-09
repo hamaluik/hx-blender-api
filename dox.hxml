@@ -1,0 +1,10 @@
+-cp src
+
+--no-output
+--macro ImportAll.run()
+-D doc-gen
+
+-xml bin/dox.xml
+
+--next
+-cmd haxelib run dox -i bin -o docs --title "hx-blender" -D version "2.78b" -D source-path "https://github.com/FuzzyWuzzie/hx-baldrick/tree/master/src" -D description "Python externs for the Blender API"
