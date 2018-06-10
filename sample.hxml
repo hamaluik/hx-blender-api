@@ -1,6 +1,8 @@
 -cp src
 -cp sample
 
- Main.hx
+ -main Main
+
+ --macro blender.macros.PluginGenerator.generate()
 
  -python bin/sample.py

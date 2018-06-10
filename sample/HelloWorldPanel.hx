@@ -1,13 +1,14 @@
-import bpy.Context;
-import bpy.types.Panel;
+import blender.bpy.Context;
+import blender.bpy.types.Panel;
+import blender.bpy.types.typeargs.*;
 
 class HelloWorldPanel extends Panel {
-    public static var bl_label = 'Turnip';
-    public static var bl_space_type = bpy.types.Panel.SpaceType.PROPERTIES;
-    public static var bl_region_type = bpy.types.Panel.RegionType.WINDOW;
+    public static var bl_label = 'Hello World';
+    public static var bl_space_type = SpaceType.PROPERTIES;
+    public static var bl_region_type = RegionType.WINDOW;
     public static var bl_context = 'scene';
 
-    override public function draw(context:bpy.Context):Void {
+    override public function draw(context:Context):Void {
         layout.column();
     }
 }
