@@ -1,4 +1,4 @@
-package bpy.types;
+package blender.bpy.types;
 
 /**
    built-in base class for all classes in bpy.types.
@@ -17,7 +17,7 @@ extern class BpyStruct {
        @param index array index of the property drive. Defaults to -1 for all indices or a single channel if the property is not an array.
        @return bpy.types.FCurve
      */
-    public function driver_add(path:String, index:Int=-1):bpy.types.FCurve;
+    public function driver_add(path:String, index:Int=-1):FCurve;
 
     /**
        Remove driver(s) from the given property
@@ -117,5 +117,5 @@ extern class BpyStruct {
     /**
        The bpy.types.ID object this datablock is from or None, (not available for all data types)
      */
-    public var id_data:Null<bpy.types.ID>;
+    public var id_data:Null<ID>;
 }

@@ -1,13 +1,6 @@
-package bpy.types;
+package blender.bpy.types;
 
-/**
-   Type of updates to perform
- */
-@:enum abstract RefreshTag(String) {
-    var OBJECT = 'OBJECT';
-    var DATA = 'DATA';
-    var TIME = 'TIME';
-}
+import blender.bpy.types.typeargs.RefreshTag;
 
 /**
    Base type for data-blocks, defining a unique name, linking from other libraries and garbage collection

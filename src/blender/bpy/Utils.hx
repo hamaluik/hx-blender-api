@@ -1,4 +1,7 @@
-package bpy;
+package blender.bpy;
+
+import blender.bpy.types.Panel;
+import blender.bpy.types.typeargs.PathType;
 
 /**
    This module contains utility functions specific to blender but not associated with blenders internal data.
@@ -28,7 +31,24 @@ extern class Utils {
        @param cls The class to register
        @throws python.ValueError
      */
-    public static function register_class(cls:Class<bpy.types.Panel>):Void;
+    public static function register_class(cls:Class<Dynamic>):Void;
+
+    /**
+       Return the base path for storing system files.
+       @param type
+       @param major major version, defaults to current.
+       @param minor minor version, defaults to current.
+       @return String
+     */
+    public static function resource_path(type:PathType, major:Int=2, minor:String="78"):String;
+
+    /**
+       Unload the python class from blender.
+
+       If the class has an unregister class method it will be called before unregistering.
+       @param cls - 
+     */
+    public static function unregister_class(cls:Class<Dynamic>):Void;
 
     // TODO: ...
 }

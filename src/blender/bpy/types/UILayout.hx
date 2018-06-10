@@ -1,4 +1,4 @@
-package bpy.types;
+package blender.bpy.types;
 
 @:enum abstract Alignment(String) {
     var EXPAND = "EXPAND";

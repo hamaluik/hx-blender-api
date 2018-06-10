@@ -1,4 +1,4 @@
-package bpy.types;
+package blender.bpy.types;
 
 /**
    TODO:
