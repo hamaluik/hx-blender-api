@@ -1,7 +1,7 @@
 package;
 
 @:blenderAddon({
-    name: "Hello World",
+    name: "Hello World Sample",
     description: "Simple hello world demo showcasing the Haxe Blender library",
     author: "Kenton Hamaluik",
     version: [1, 0, 0],

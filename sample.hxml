@@ -5,4 +5,4 @@
 
  --macro blender.macros.PluginGenerator.generate()
 
- -python bin/sample.py
+ -python bin/helloworldsample.py

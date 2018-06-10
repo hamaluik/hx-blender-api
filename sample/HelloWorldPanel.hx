@@ -9,6 +9,6 @@ class HelloWorldPanel extends Panel {
     public static var bl_context = 'scene';
 
     override public function draw(context:Context):Void {
-        layout.column();
+        var col = layout.column();
     }
 }
