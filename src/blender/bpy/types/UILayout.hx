@@ -180,5 +180,112 @@ extern class UILayout extends BpyStruct {
      */
     public function operator(operator:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE, emboss:Bool=true, icon_value:Int=0):OperatorProperties;
 
-    // TODO...
+    /**
+       operator_enum
+       @param operator Identifier of the operator
+       @param property Identifier of property in operator
+     */
+    public function operator_enum(operator:String, property:String):Void;
+
+    /**
+       operator_menu_enum
+       @param operator Identifier of the operator
+       @param property Identifier of property in operator
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+     */
+    public function operator_menu_enum(operator:String, property:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE):Void;
+
+    /**
+       Item. Displays text and/or icon in the layout
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+       @param icon_value Icon Value, Override automatic icon of the item
+     */
+    public function label(text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE, icon_value:Int=0):Void;
+
+    /**
+       menu
+       @param menu Identifier of the menu
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+       @param icon_value Icon Value, Override automatic icon of the item
+     */
+    public function menu(menu:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE, icon_value:Int=0):Void;
+
+    /**
+       Item. Inserts empty space into the layout between items
+     */
+    public function separator():Void;
+
+    /**
+       context_pointer_set
+       @param name Name, Name of entry in the context
+       @param data Pointer to put in context
+     */
+    public function context_pointer_set(name:String, data:AnyType):Void;
+
+    /**
+       Inserts common Space header UI (editor type selector)
+     */
+    public function template_header():Void;
+
+    /**
+       template_ID
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param _new Operator identifier to create a new ID block
+       @param open Operator identifier to open a file for creating a new ID block
+       @param unlink Operator identifier to unlink the ID block
+     */
+    public function template_ID(data:AnyType, property:String, _new:String="", open:String="", unlink:String=""):Void;
+
+    /**
+       template_ID_preview
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param _new Operator identifier to create a new ID block
+       @param open Operator identifier to open a file for creating a new ID block
+       @param unlink Operator identifier to unlink the ID block
+       @param rows Number of thumbnail preview rows to display
+       @param cols Number of thumbnail preview columns to display
+     */
+    public function template_ID_preview(data:AnyType, property:String, _new:String="", open:String="", unlink:String="", rows:Int=0, cols:Int=0):Void;
+
+    /**
+       template_any_ID
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param type_property Identifier of property in data giving the type of the ID-blocks to use
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+     */
+    public function template_any_ID(data:AnyType, property:String, type_property:String, text:String="", text_ctx:String="", translate:Bool=true):Void;
+
+    /**
+       template_path_builder
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param root ID-block from which path is evaluated from
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+     */
+    public function template_path_builder(data:AnyType, property:String, root:ID, text:String="", text_ctx:String="", translate:Bool=true):Void;
+
+    /**
+       Generates the UI layout for modifiers
+       @param data Modifier data
+       @return UILayout
+     */
+    public function template_modifier(data:Modifier):UILayout;
+
+    // TODO:...
 }
