@@ -287,5 +287,23 @@ extern class UILayout extends BpyStruct {
      */
     public function template_modifier(data:Modifier):UILayout;
 
+    /**
+       Generates the UI layout for constraints
+       @param data Constraint data 
+       @return UILayout
+     */
+    public function template_constraint(data:Modifier):UILayout;
+
+    /**
+       Item. A preview window for materials, textures, lamps or worlds
+       @param id ID data-block
+       @param show_buttons Show preview buttons?
+       @param parent ID data-block
+       @param slot Texture slot
+       @param preview_id Identifier of this preview widget, if not set the ID type will be used (i.e. all previews of materials without explicit ID will have the same size...)
+       @return UILayout
+     */
+    public function template_preview(id:ID, show_buttons:Bool=true, ?parent:ID, ?slot:TextureSlot, preview_id:String=""):UILayout;
+
     // TODO:...
 }
