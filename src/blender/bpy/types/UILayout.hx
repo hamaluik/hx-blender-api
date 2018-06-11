@@ -1,26 +1,8 @@
 package blender.bpy.types;
 
-@:enum abstract Alignment(String) {
-    var EXPAND = "EXPAND";
-    var LEFT = "LEFT";
-    var CENTER = "CENTER";
-    var RIGHT = "RIGHT";
-}
-
-@:enum abstract OperatorContext(String) {
-    var INVOKE_DEFAULT = 'INVOKE_DEFAULT';
-    var INVOKE_REGION_WIN = 'INVOKE_REGION_WIN';
-    var INVOKE_REGION_CHANNELS = 'INVOKE_REGION_CHANNELS';
-    var INVOKE_REGION_PREVIEW = 'INVOKE_REGION_PREVIEW';
-    var INVOKE_AREA = 'INVOKE_AREA';
-    var INVOKE_SCREEN = 'INVOKE_SCREEN';
-    var EXEC_DEFAULT = 'EXEC_DEFAULT';
-    var EXEC_REGION_WIN = 'EXEC_REGION_WIN';
-    var EXEC_REGION_CHANNELS = 'EXEC_REGION_CHANNELS';
-    var EXEC_REGION_PREVIEW = 'EXEC_REGION_PREVIEW';
-    var EXEC_AREA = 'EXEC_AREA';
-    var EXEC_SCREEN = 'EXEC_SCREEN';
-}
+import blender.bpy.types.typeargs.Alignment;
+import blender.bpy.types.typeargs.OperatorContext;
+import blender.bpy.types.typeargs.IconType;
 
 /**
     User interface layout in a panel or header
@@ -104,6 +86,99 @@ extern class UILayout extends BpyStruct {
        @return String
      */
     public static function enum_item_name(data:AnyType, property:String, identifier:String):String;
+
+    /**
+       Return the UI description for this enum item
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param identifier Identifier of the enum item
+       @return String
+     */
+    public static function enum_item_description(data:AnyType, property:String, identifier:String):String;
+
+    /**
+       Return the icon for this enum item
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param identifier Identifier of the enum item
+       @return String
+     */
+    public static function enum_item_icon(data:AnyType, property:String, identifier:String):String;
+
+    /**
+       Item. Exposes an RNA item and places it into the layout
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param text Override automatic text of the item
+       @param text_ctxt Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+       @param expand Expand button to show more detail
+       @param slider Use slider widget for numeric values
+       @param toggle Use toggle widget for boolean values
+       @param icon_only Draw only icons in buttons, no text
+       @param event Use button to input key events
+       @param full_event Use button to input full events including modifiers
+       @param emboss Draw the button itself, just the icon/text
+       @param index The index of this button, when set a single member of an array can be accessed, when set to -1 all array members are used
+       @param icon_value Icon Value, Override automatic icon of the item
+     */
+    public function prop(data:AnyType, property:String, text:String="", text_ctxt:String="", translate:Bool=true, icon:IconType=IconType.NONE, expand:Bool=false, slider:Bool=false, toggle:Bool=false, icon_only:Bool=false, event:Bool=false, full_event:Bool=false, emboss:Bool=true, index:Int=-1, icon_value:Int=0):Void;
+
+    /**
+       props_enum
+       @param data Data from which to take property
+       @param property Identifier of property in data
+     */
+    public function props_enum(data:AnyType, property:String):Void;
+
+    /**
+       prop_menu_enum
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param text Override automatic text of the item
+       @param text_ctxt Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+     */
+    public function prop_menu_enum(data:AnyType, property:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE):Void;
+
+    /**
+       prop_enum
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param text Override automatic text of the item
+       @param text_ctxt Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+     */
+    public function prop_enum(data:AnyType, property:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE):Void;
+
+    /**
+       prop_search
+       @param data Data from which to take property
+       @param property Identifier of property in data
+       @param search_data Data from which to take collection to search in
+       @param search_property Identifier of search collection property
+       @param text Override automatic text of the item
+       @param text_ctxt Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+     */
+    public function prop_search(data:AnyType, property:String, search_data:AnyType, search_property:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE):Void;
+
+    /**
+       Item. Places a button into the layout to call an Operator
+       @param operator Identifier of the operator
+       @param text Override automatic text of the item
+       @param text_ctx Override automatic translation context of the given text
+       @param translate Translate the given text, when UI translation is enabled
+       @param icon Icon, Override automatic icon of the item
+       @param emboss Draw the button itself, just the icon/text
+       @param icon_value Icon Value, Override automatic icon of the item
+       @return OperatorProperties
+     */
+    public function operator(operator:String, text:String="", text_ctx:String="", translate:Bool=true, icon:IconType=IconType.NONE, emboss:Bool=true, icon_value:Int=0):OperatorProperties;
 
     // TODO...
 }
