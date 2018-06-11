@@ -11,5 +11,7 @@ class HelloWorldPanel extends Panel {
     override public function draw(context:Context):Void {
         var col = layout.column();
         col.label("Hello, world!");
+        col.label("What is your name?");
+        col.prop(Context.scene, "my_name");
     }
 }

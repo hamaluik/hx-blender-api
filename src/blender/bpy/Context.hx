@@ -1,6 +1,8 @@
 package blender.bpy;
 
+import blender.bpy.types.*;
+
 @:pythonImport("bpy", "context")
 extern class Context {
-    // TODO: ...
+    public var scene:Scene;
 }

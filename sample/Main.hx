@@ -1,5 +1,9 @@
 package;
 
+import blender.Blender;
+import blender.bpy.Utils;
+import blender.bpy.props.StringProperty;
+
 @:blenderAddon({
     name: "Hello World Sample",
     description: "Simple hello world demo showcasing the Haxe Blender library",
@@ -19,10 +23,14 @@ class Main {
     }
 
     public static function register():Void {
-        blender.bpy.Utils.register_class(HelloWorldPanel);
+        Utils.register_class(HelloWorldPanel);
+        Blender.registerProperty(blender.bpy.types.Scene, "my_name", new StringProperty({
+            name: "My Name",
+            description: "Your name!"
+        }));
     }
 
     public static function unregister():Void {
-        blender.bpy.Utils.unregister_class(HelloWorldPanel);
+        Utils.unregister_class(HelloWorldPanel);
     }
 }

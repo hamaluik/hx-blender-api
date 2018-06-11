@@ -1,5 +1,6 @@
 package blender.macros;
 
+#if macro
 import haxe.macro.Context;
 import haxe.macro.Compiler;
 import haxe.macro.Type;
@@ -135,3 +136,4 @@ class PluginGenerator {
         });
     }
 }
+#end
