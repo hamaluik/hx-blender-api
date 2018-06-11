@@ -1,0 +1,13 @@
+{
+  "name": "blender_api",
+  "url" : "https://github.com/FuzzyWuzzie/hx-blender-api",
+  "license": "Apache",
+  "classPath": "src",
+  "tags": ["python", "extern"],
+  "description": "Externs and tools for developing Blender addons",
+  "version": "0.0.0",
+  "releasenote": "",
+  "contributors": ["FuzzyWuzzie"],
+  "dependencies": {}
+}
+
