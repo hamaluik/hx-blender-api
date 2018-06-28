@@ -12,6 +12,6 @@ class HelloWorldPanel extends Panel {
         var col = layout.column();
         col.label("Hello, world!");
         col.label("What is your name?");
-        col.prop(Context.scene, "my_name");
+        col.prop(context.scene, "my_name");
     }
 }

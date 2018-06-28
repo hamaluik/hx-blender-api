@@ -1,6 +1,5 @@
 package blender.bpy;
 
-import blender.bpy.types.Panel;
 import blender.bpy.types.typeargs.PathType;
 
 /**
@@ -10,7 +9,7 @@ import blender.bpy.types.typeargs.PathType;
 extern class Utils {
     /**
        Returns a list of paths to external files referenced by the loaded .blend file.
-       @param absolute When true the paths returned are made absolute. 
+       @param absolute When true the paths returned are made absolute.
        @param packed When true skip file paths for packed data.
        @param local When true skip linked library paths.
        @return Array<String>
@@ -46,7 +45,7 @@ extern class Utils {
        Unload the python class from blender.
 
        If the class has an unregister class method it will be called before unregistering.
-       @param cls - 
+       @param cls -
      */
     public static function unregister_class(cls:Class<Dynamic>):Void;
 
