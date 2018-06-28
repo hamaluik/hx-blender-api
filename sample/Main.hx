@@ -19,7 +19,6 @@ import blender.bpy.props.StringProperty;
 })
 class Main {
     public static function main() {
-        register();
     }
 
     public static function register():Void {
