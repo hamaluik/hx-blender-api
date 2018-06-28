@@ -7,7 +7,7 @@
   "description": "Externs and tools for developing Blender addons",
   "version": "0.0.0",
   "releasenote": "",
-  "contributors": ["FuzzyWuzzie"],
+  "contributors": ["Kenton Hamaluik", "David Klein"],
   "dependencies": {}
 }
 
